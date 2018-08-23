@@ -14,7 +14,7 @@ public class HelloController {
 		LocalTime currentTime = new LocalTime();
 		LocalDate currentDate = new LocalDate();
 		
-        return "Greetings from Spring Boot!" + currentDate + " " + currentTime;
+        return currentDate + " " + currentTime.getHourOfDay() + "h" + currentTime.getMinuteOfHour();
     }
 
 }
