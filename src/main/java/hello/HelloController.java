@@ -2,13 +2,19 @@ package hello;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.joda.time.LocalTime;
+import org.joda.time.LocalDate;
+
 
 @RestController
 public class HelloController {
 
-    @RequestMapping("/")
+    @RequestMapping("/data")
     public String index() {
-        return "Greetings from Spring Boot!";
+		LocalTime currentTime = new LocalTime();
+		LocalDate currentDate = new LocalDate();
+		
+        return "Greetings from Spring Boot!" + currentDate + " " + currentTime;
     }
 
 }
